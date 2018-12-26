@@ -1,4 +1,4 @@
-from serializable.serialenum import serial_enum
+from pyserialization.serialenum import serial_enum
 
 import unittest
 import enum

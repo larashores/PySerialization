@@ -1,4 +1,4 @@
-from serializable.serializable import Serializable
+from pyserialization.serializable import Serializable
 
 from abc import ABCMeta
 import collections
@@ -30,7 +30,7 @@ class CompositeMeta(ABCMeta):
 
 class Composite(Serializable, metaclass=CompositeMeta):
     """
-    A Serializable type that represents a composite of other pyserialize types.
+    A Serializable type that represents a composite of other Serializeable types.
 
     This class is meant to be subclassed to easily create new Serializable's made up of other Serializable's. For each
     type the object should hold, simply add a class attribute with a value of that type. Every instance created will

@@ -1,5 +1,5 @@
-from serializable.serializable import Serializable
-from serializable.endianness import Endianess
+from pyserialization.serializable import Serializable
+from pyserialization.endianness import Endianess
 
 import enum
 import struct

@@ -1,4 +1,4 @@
-from serializable.serialimage import SerialImage
+from pyserialization.serialimage import SerialImage
 
 import unittest
 from PIL import Image

@@ -1,8 +1,8 @@
 from distutils.core import setup
 
 setup(
-    name='PySerializable',
-    packages=['pyserialize'],
+    name='PySerialization',
+    packages=['pyserialization'],
     package_dir={'': 'src'},
     python_requires=">=3.0",
     extras_require={'saveablendarray': ['numpy'],

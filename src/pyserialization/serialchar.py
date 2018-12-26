@@ -1,4 +1,4 @@
-from serializable.serializable import Serializable
+from pyserialization.serializable import Serializable
 
 import struct
 

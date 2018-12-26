@@ -1,7 +1,7 @@
-from serializable.serializable import Serializable
-from serializable.serialint import SerialU32
-from serializable.seriallist import serial_list
-from serializable.serialstring import SerialAsciiString
+from pyserialization.serializable import Serializable
+from pyserialization.serialint import SerialU32
+from pyserialization.seriallist import serial_list
+from pyserialization.serialstring import SerialAsciiString
 
 from operator import mul
 import functools

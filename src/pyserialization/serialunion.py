@@ -1,5 +1,5 @@
-from serializable.serializable import Serializable
-from serializable.serialint import SerialU8
+from pyserialization.serializable import Serializable
+from pyserialization.serialint import SerialU8
 
 from abc import ABCMeta
 import collections

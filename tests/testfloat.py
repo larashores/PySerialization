@@ -1,4 +1,4 @@
-from serializable.serialfloat import SerialHalf, SerialFloat, SerialDouble
+from pyserialization.serialfloat import SerialHalf, SerialFloat, SerialDouble
 
 import unittest
 

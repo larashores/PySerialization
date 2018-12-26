@@ -1,4 +1,4 @@
-from serializable.serialchar import SerialChar
+from pyserialization.serialchar import SerialChar
 
 import unittest
 

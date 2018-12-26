@@ -1,4 +1,4 @@
-from serializable.serialndarray import SerialNdArray
+from pyserialization.serialndarray import SerialNdArray
 
 import unittest
 import random

@@ -1,6 +1,6 @@
-from serializable.composite import Composite
-from serializable.serialint import SerialU16, SerialU32
-from serializable.serialstring import SerialString
+from pyserialization.composite import Composite
+from pyserialization.serialint import SerialU16, SerialU32
+from pyserialization.serialstring import SerialString
 
 import unittest
 

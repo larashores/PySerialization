@@ -1,4 +1,4 @@
-from serializable.serialint import SerialU8, SerialU16, SerialU32, SerialU64, SerialS8, SerialS16, SerialS32, SerialS64
+from pyserialization.serialint import SerialU8, SerialU16, SerialU32, SerialU64, SerialS8, SerialS16, SerialS32, SerialS64
 
 import unittest
 

@@ -1,5 +1,5 @@
-from serializable.seriallist import serial_list
-from serializable.serialint import SerialU16
+from pyserialization.seriallist import serial_list
+from pyserialization.serialint import SerialU16
 
 import unittest
 import random

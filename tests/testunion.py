@@ -1,6 +1,6 @@
-from serializable.serialunion import Union
-from serializable.serialint import SerialU16, SerialU32
-from serializable.serialstring import SerialString
+from pyserialization.serialunion import Union
+from pyserialization.serialint import SerialU16, SerialU32
+from pyserialization.serialstring import SerialString
 
 import unittest
 

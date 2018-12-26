@@ -1,4 +1,4 @@
-from serializable.serialstring import SerialAsciiString, SerialString
+from pyserialization.serialstring import SerialAsciiString, SerialString
 
 import unittest
 
