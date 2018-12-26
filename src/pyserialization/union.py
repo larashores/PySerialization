@@ -114,11 +114,11 @@ class Union(Serializable, metaclass=UnionMeta):
         get_attribute = lambda item: Serializable.__getattribute__(self, item)
         if item not in get_attribute('__typemap__'):
             return get_attribute(item)
-        current = get_attribute('__dict__')['__current__']
+        current = get_attribute('__dict__')['_current']
         SetType = get_attribute('__typemap__')[item]
         if type(current) != SetType:
-            return None
-        return current
+            raise ValueError('Type is not currently set to {}'.format(item))
+        return current.get() if callable(getattr(current, 'get', None)) else current
 
     def load_in_place(self, data, index=0):
         """Loads the union type as an index into the possible types and then calls from_byte_array on that type"""

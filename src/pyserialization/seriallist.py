@@ -10,7 +10,7 @@ def serial_list(list_type):
         list_type: The Serializable type to store in the array
     """
 
-    class _SerialList(list, Serializable):
+    class SerialList(list, Serializable):
         """A list type that can store homogeneous Serializable types."""
         array_type = property(lambda self: self._array_type)
 
@@ -81,4 +81,4 @@ def serial_list(list_type):
                 data += val.to_bytes()
             return data
 
-    return _SerialList
+    return SerialList

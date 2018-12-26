@@ -1,4 +1,4 @@
-from pyserialization.serialunion import Union
+from pyserialization.union import Union
 from pyserialization.serialint import SerialU16, SerialU32
 from pyserialization.serialstring import SerialString
 
@@ -17,12 +17,16 @@ class TestSerialEnum(unittest.TestCase):
         union2 = TestUnion.from_bytes(union1.to_bytes())[0]
         self.assertEqual(union2.get().get(), 0)
         self.assertEqual(union2.get_type(), SerialU16)
+        self.assertEqual(union2.a, 0)
+        self.assertRaises(ValueError, lambda: union2.b)
 
     def test_set_value(self):
         union1 = TestUnion(SerialString, SerialString('hello'))
         union2 = TestUnion.from_bytes(union1.to_bytes())[0]
         self.assertEqual(union2.get().get(), 'hello')
         self.assertEqual(union2.get_type(), SerialString)
+        self.assertEqual(union2.c, 'hello')
+        self.assertRaises(ValueError, lambda: union2.b)
 
     def test_set_convertible_value(self):
         union1 = TestUnion(SerialU32, 4)

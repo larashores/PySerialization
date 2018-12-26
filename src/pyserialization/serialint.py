@@ -58,7 +58,7 @@ def _create_int(int_type):
     if not isinstance(int_type, _IntType):
         raise ValueError('Not a valid int type: ' + str(int_type))
 
-    class _SerialInt(Serializable):
+    class SerialInt(Serializable):
         """
         A Serializable int type that is converted with the python struct module
         """
@@ -121,7 +121,7 @@ def _create_int(int_type):
             """Loads a SerialInt type using the struct module"""
             return struct.pack(self._format_string, self._value)
 
-    return _SerialInt
+    return SerialInt
 
 
 SerialU8 = _create_int(_IntType.U8)
