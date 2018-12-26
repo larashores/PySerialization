@@ -1,4 +1,4 @@
-from serializable import Serializable
+from serializable.serializable import Serializable
 
 import struct
 
@@ -30,7 +30,7 @@ class SerialChar(Serializable):
             raise ValueError("Value not str! {}".format(value))
         if len(value) != 1:
             raise ValueError('Must only be one character')
-        if ord(value) > 128:
+        if ord(value) > 127:
             raise ValueError("Oridance '{}' of character '{}' is too large. Max='128'".format(ord(value), value))
         self._value = value
 
