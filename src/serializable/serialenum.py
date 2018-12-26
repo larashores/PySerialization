@@ -1,7 +1,7 @@
-import enum
-
-from serializable import Serializable
+from serializable.serializable import Serializable
 from serializable.serialint import SerialU32
+
+import enum
 
 
 def serial_enum(enum_type):
