@@ -1,4 +1,9 @@
 from distutils.core import setup
+import os
+
+path = os.path.abspath(os.path.dirname(__file__))
+with open(os.path.join('README.md')) as file:
+    README = file.read()
 
 setup(
     name='PySerialization',
@@ -12,6 +17,8 @@ setup(
     author_email='vince.shores@outlook.com',
     url='https://github.com/vinceshores',
     description='Set of classes allowing easy serialization of simple and composite types',
+    long_description=README,
+    long_description_content_type='text/markdown',
     classifiers=[
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
