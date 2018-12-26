@@ -1,16 +1,17 @@
+from serializable.serializable import Serializable
+from serializable.serialint import SerialU32
+
 import io
 
 from PIL import Image
 
-from serializable import Serializable
-from serializable.serialint import SerialU32
 
 
 class SerialImage(Serializable):
     """
     A Saveable image type that can hold PIL images
     """
-    def __init__(self, image=Image.new('RGB', (0, 0))):
+    def __init__(self, image=Image.new('RGB', (1, 1))):
         """
         Initializes the SerialImage with a given image or a null image
         """
@@ -32,15 +33,18 @@ class SerialImage(Serializable):
 
     def load_in_place(self, data, index=0):
         """Loads the image size as a U32 and then the data using the PIL library"""
-        size, index = SerialU32.from_byte_array(data, index)
-        with io.BytesIO(data) as stream:
+        size, index = SerialU32.from_bytes(data, index)
+        end_index = index + size.get()
+        image_data = data[index:end_index]
+        with io.BytesIO(image_data) as stream:
+            stream.seek(index)
             self._image = Image.open(stream)
             self._image.load()
-        return index + size.get()
+        return end_index
 
     def to_bytes(self):
         """Saves the image by saving its size as a U32 and then the data using the PIL library"""
         stream = io.BytesIO()
         self._image.save(stream, format=self._image.format if self._image.format is not None else 'PNG')
         size = SerialU32(len(stream.getvalue()))
-        return size.to_byte_array() + stream.getvalue()
+        return size.to_bytes() + stream.getvalue()
