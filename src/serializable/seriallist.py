@@ -1,4 +1,4 @@
-from serializable import Serializable
+from serializable.serializable import Serializable
 from serializable.serialint import SerialU32
 
 

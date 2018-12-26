@@ -3,9 +3,9 @@ from operator import mul
 
 import numpy as np
 
-from serializable import Serializable
-from serialint import SerialU32
-from seriallist import serial_list
+from serializable.serializable import Serializable
+from serializable.serialint import SerialU32
+from serializable.seriallist import serial_list
 from serializable.serialstring import SerialAsciiString
 
 

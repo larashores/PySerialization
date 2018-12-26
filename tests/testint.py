@@ -1,6 +1,6 @@
-import unittest
-
 from serializable.serialint import SerialU8, SerialU16, SerialU32, SerialU64, SerialS8, SerialS16, SerialS32, SerialS64
+
+import unittest
 
 
 class TestSerialInt(unittest.TestCase):

@@ -1,6 +1,7 @@
+from serializable.serialstring import SerialAsciiString, SerialString
+
 import unittest
 
-from serializable.serialstring import SerialAsciiString, SerialString
 
 
 class TestSerialInt(unittest.TestCase):
