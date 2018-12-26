@@ -1,8 +1,8 @@
+from serializable.serializable import Serializable
+
 from abc import ABCMeta
 import collections
 import inspect
-
-from serializable import Serializable
 
 
 class CompositeMeta(ABCMeta):

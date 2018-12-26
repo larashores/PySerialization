@@ -1,7 +1,7 @@
-import struct
-
 from serializable.serializable import Serializable
 from serializable.serialint import SerialU32
+
+import struct
 
 
 def _create_string(encoding='ascii'):

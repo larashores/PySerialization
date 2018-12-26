@@ -1,12 +1,11 @@
-import functools
-from operator import mul
-
-import numpy as np
-
 from serializable.serializable import Serializable
 from serializable.serialint import SerialU32
 from serializable.seriallist import serial_list
 from serializable.serialstring import SerialAsciiString
+
+from operator import mul
+import functools
+import numpy as np
 
 
 class _IntList(serial_list(SerialU32)):

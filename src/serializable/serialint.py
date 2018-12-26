@@ -1,8 +1,8 @@
-import struct
-import enum
-
 from serializable.endianness import Endianess
 from serializable.serializable import Serializable
+
+import struct
+import enum
 
 
 class _IntInfo:
