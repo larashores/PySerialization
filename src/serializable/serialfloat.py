@@ -1,9 +1,9 @@
+from serializable.serializable import Serializable
+from serializable.endianness import Endianess
+
 import enum
 import struct
 import numbers
-
-from serializable import Serializable
-from serializable.endianness import Endianess
 
 
 class _FloatInfo:
