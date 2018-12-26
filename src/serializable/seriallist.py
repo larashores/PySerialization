@@ -14,6 +14,9 @@ def serial_list(list_type):
         """A list type that can store homogeneous Serializable types."""
         array_type = property(lambda self: self._array_type)
 
+        def __init__(self, values=[]):
+            self.set(values)
+
         @staticmethod
         def _validate(value):
             """
