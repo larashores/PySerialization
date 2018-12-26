@@ -1,9 +1,9 @@
+from serializable.serializable import Serializable
+from serializable.serialint import SerialU8
+
 from abc import ABCMeta
 import collections
 import inspect
-
-from serializable import Serializable
-from serialint import SerialU8, SerialU16, SerialU32
 
 
 class UnionMeta(ABCMeta):
@@ -50,12 +50,13 @@ class Union(Serializable, metaclass=UnionMeta):
 
 
     """
-    def __init__(self):
+    def __init__(self, Type=None, value=None):
         """
         Creates an instance attribute for each type in the class attribute '__ordered__'.
         """
         Serializable.__init__(self)
-        self._current = self.__typemap__[self.__ordered__[0]]()
+        Type = self.__typemap__[self.__ordered__[0]] if Type is None else Type
+        self.set(Type, value)
 
     def __str__(self):
         """Returns string representation of current stored object"""
@@ -83,7 +84,10 @@ class Union(Serializable, metaclass=UnionMeta):
             elif type(value) == Type:
                 self._current = value
             else:
-                raise ValueError('Value not {}! {}'.format(Type, value))
+                try:
+                    self._current = Type(value)
+                except:
+                    raise ValueError('Value not {}! {}'.format(Type, value))
             return
         raise ValueError('Invalid Type {}'.format(Type))
 
