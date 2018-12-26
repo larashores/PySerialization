@@ -2,7 +2,7 @@ import struct
 import enum
 
 from serializable.endianness import Endianess
-from serializable import Serializable
+from serializable.serializable import Serializable
 
 
 class _IntInfo:

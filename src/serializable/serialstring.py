@@ -1,6 +1,6 @@
 import struct
 
-from serializable import Serializable
+from serializable.serializable import Serializable
 from serializable.serialint import SerialU32
 
 
@@ -54,7 +54,7 @@ def _create_string(encoding='ascii'):
                 self._data = value.encode(encoding)
                 self._value = value
             except UnicodeEncodeError as ex:
-                raise ValueError("String '{}' not of correct encoding type '{}'".format(value, encoding)) from ex
+                raise ValueError("String '{}' cannot be encoded to encoding '{}'".format(value, encoding)) from ex
 
         def load_in_place(self, data, index=0):
             """Loads the string as a U32 length and then loads the decoded string data"""
