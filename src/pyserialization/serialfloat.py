@@ -106,7 +106,7 @@ def _create_floating_point(float_type):
 
         def to_bytes(self):
             """Loads a floating point type using the struct module"""
-            return struct.pack(self._format_string, self._value)
+            return bytearray(struct.pack(self._format_string, self._value))
 
     return _SerialFloatingPoint
 

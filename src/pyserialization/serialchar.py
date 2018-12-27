@@ -43,4 +43,4 @@ class SerialChar(Serializable):
 
     def to_bytes(self):
         """Converts a character type using the struct module"""
-        return struct.pack(self._format_string, self._value.encode())
+        return bytearray(struct.pack(self._format_string, self._value.encode()))

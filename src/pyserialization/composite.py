@@ -115,7 +115,7 @@ class Composite(Serializable, metaclass=CompositeMeta):
 
     def to_bytes(self):
         """Recursively calls to_bytes on each Serializable attribute"""
-        data = bytes()
+        data = bytearray()
         for key in self.__ordered__:
             data += self.__dict__[key].to_bytes()
         return data
