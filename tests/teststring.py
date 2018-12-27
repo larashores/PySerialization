@@ -3,7 +3,7 @@ from pyserialization.serialstring import SerialAsciiString, SerialString
 import unittest
 
 
-class TestSerialInt(unittest.TestCase):
+class TestSerialString(unittest.TestCase):
     def test_unicode(self):
         text = 'a\u0e55\u0e57a'
         string1 = SerialString(text)

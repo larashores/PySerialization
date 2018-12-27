@@ -12,6 +12,7 @@ class TestEnum(enum.Enum):
 
 SerialTestEnum = serial_enum(TestEnum)
 
+
 class TestSerialEnum(unittest.TestCase):
     def test_default(self):
         a = SerialTestEnum()

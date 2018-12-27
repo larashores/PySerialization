@@ -11,7 +11,7 @@ class TestUnion(Union):
     c = SerialString
 
 
-class TestSerialEnum(unittest.TestCase):
+class TestSerialUnion(unittest.TestCase):
     def test_default(self):
         union1 = TestUnion()
         union2 = TestUnion.from_bytes(union1.to_bytes())[0]

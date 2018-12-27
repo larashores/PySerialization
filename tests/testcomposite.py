@@ -11,7 +11,7 @@ class TestComposite(Composite):
     c = SerialString
 
 
-class TestSerialEnum(unittest.TestCase):
+class TestSerialComposite(unittest.TestCase):
     def test_all(self):
         composite1 = TestComposite()
         composite1.a = 4

@@ -1,9 +1,17 @@
-from pyserialization.serialimage import SerialImage
-
 import unittest
-from PIL import Image
 
-class TestSerialEnum(unittest.TestCase):
+try:
+    from PIL import Image
+    pil_installed = True
+except ImportError:
+    pil_installed = False
+
+if pil_installed:
+    from pyserialization.serialimage import SerialImage
+
+
+@unittest.skipIf(not pil_installed, 'PIL not installed')
+class TestSerialImage(unittest.TestCase):
     def test_default(self):
         image1 = SerialImage()
         image2 = SerialImage.from_bytes(image1.to_bytes())[0]

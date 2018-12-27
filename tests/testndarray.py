@@ -1,10 +1,20 @@
-from pyserialization.serialndarray import SerialNdArray
+import unittest
+
+try:
+    import numpy as np
+    numpy_installed = True
+except ImportError:
+    numpy_installed = False
+
+if numpy_installed:
+    from pyserialization.serialndarray import SerialNdArray
+
 
 import unittest
 import random
-import numpy as np
 
 
+@unittest.skipIf(not numpy_installed, 'numpy not installed')
 class TestSerialNdArray(unittest.TestCase):
     def test_dtypes(self):
         data_types = ['bool_', 'int_', 'intc', 'intp', 'int8', 'int16', 'int32', 'int64', 'uint8', 'uint16', 'uint32',
