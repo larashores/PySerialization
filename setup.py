@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup
 import os
 
 path = os.path.abspath(os.path.dirname(__file__))
@@ -9,10 +9,10 @@ setup(
     name='PySerialization',
     packages=['pyserialization'],
     package_dir={'': 'src'},
-    python_requires=">=3.0",
+    python_requires=">=3.4",
     extras_require={'saveablendarray': ['numpy'],
                     'saveableimage': ['PIL']},
-    version='1.0',
+    version='1.0.1',
     author='Vince Shores',
     author_email='vince.shores@outlook.com',
     url='https://github.com/vinceshores',
