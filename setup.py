@@ -12,7 +12,7 @@ setup(
     python_requires=">=3.4",
     extras_require={'saveablendarray': ['numpy'],
                     'saveableimage': ['PIL']},
-    version='1.0.1',
+    version='1.2',
     author='Vince Shores',
     author_email='vince.shores@outlook.com',
     url='https://github.com/vinceshores',
